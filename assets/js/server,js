@@ -1,0 +1,20 @@
+const express = require('express');
+const { getUserPosts } = require('insta-fetcher');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+
+app.get('/api/instagram', async (req, res) => {
+  try {
+    const result = await getUserPosts('wepink.br', 6); // pega 6 imagens
+    const images = result.map(post => post.displayUrl);
+    res.json(images);
+  } catch (err) {
+    res.status(500).json({ error: 'Erro ao buscar imagens.' });
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Servidor Node rodando em http://localhost:3000');
+});
