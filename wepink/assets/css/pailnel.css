@@ -1,0 +1,4931 @@
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fcfcfc;
+    color: #3a3a3a;
+}
+
+.painel-container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.painel-sidebar {
+    background: #fff;
+    width: 260px;
+    min-width: 220px;
+    padding: 40px 0 0 0;
+    border-right: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.painel-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #d8d8d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.painel-avatar svg {
+    width: 60px;
+    height: 60px;
+}
+
+.painel-hello {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.painel-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.painel-menu a {
+    color: #888;
+    text-decoration: none;
+    padding: 14px 0 14px 32px;
+    font-size: 1.05rem;
+    border-left: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.painel-menu a.active,
+.painel-menu a:hover {
+    color: #222;
+    font-weight: 600;
+    border-left: 3px solid #ff1493;
+    background: #fff;
+}
+
+.painel-main {
+    flex: 1;
+    padding: 0 40px 0 40px;
+    /* Remove o padding-top */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.painel-header {
+    display: none;
+    /* Esconde a div em branco acima das sessões */
+}
+
+.painel-back-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+}
+
+.painel-back-btn:hover {
+    background: #fff;
+    color: #ff1493;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+    fill: currentColor;
+}
+
+.painel-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+    flex: 0 0 auto;
+}
+
+.painel-add-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+}
+
+.painel-add-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-main-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 120px;
+    padding-top: 24px;
+}
+
+.painel-empty-msg {
+    font-size: 2rem;
+    color: #a3a3a3;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+    width: 100%;
+}
+
+.painel-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.painel-box-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.painel-box-btn {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    margin-top: 18px;
+}
+
+.painel-box-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-newsletter {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-left: 24px;
+    max-width: 350px;
+}
+
+.painel-checkbox {
+    accent-color: #ff1493;
+    margin-right: 8px;
+}
+
+/* VTEX-like Endereços layout */
+.painel-enderecos-vtex {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.painel-enderecos-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0 0 0;
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    gap: 0;
+    position: relative;
+}
+
+.painel-enderecos-header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.painel-vtex-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+}
+
+.painel-vtex-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-vtex-btn-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.painel-enderecos-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 18px 0 0 0;
+    line-height: 1.1;
+    text-align: left;
+    padding-left: 0;
+}
+
+.painel-enderecos-header-right {
+    display: flex;
+    align-items: flex-start;
+}
+
+.painel-vtex-btn-add {
+    background: #ff1493;
+    color: #fff;
+    border: 2px solid #ff1493;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.painel-vtex-btn-add:hover {
+    background: #fff;
+    color: #ff1493;
+}
+
+.painel-endereco-card {
+    background: #fff;
+    border: 2px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 28px 32px 24px 32px;
+    margin-top: 32px;
+    margin-left: 0;
+    max-width: 350px;
+    min-width: 280px;
+    box-sizing: border-box;
+    color: #a3a3a3;
+    font-size: 1.2rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.painel-endereco-editar-btn {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+}
+
+.painel-endereco-editar-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-enderecos-empty {
+    padding: 24px;
+    text-align: center;
+}
+
+.painel-enderecos-empty-msg {
+    font-size: 1.2rem;
+    color: #a3a3a3;
+    font-weight: 400;
+}
+
+.painel-enderecos-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 16px;
+    min-height: 180px;
+}
+
+@media (max-width: 900px) {
+    .painel-container {
+        flex-direction: column;
+    }
+
+    .painel-sidebar {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 20px 0;
+    }
+
+    .painel-main {
+        padding: 30px 10px 0 10px;
+    }
+
+    .painel-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        justify-content: flex-start;
+        min-height: unset;
+        padding: 0 0 16px 0;
+    }
+
+    .painel-back-btn,
+    .painel-add-btn {
+        margin-bottom: 8px !important;
+        position: static;
+        margin-bottom: 12px;
+        width: auto !important;
+        justify-content: flex-start !important;
+        align-self: flex-start !important;
+    }
+
+    .painel-title {
+        margin: 0 0 16px 0;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .painel-newsletter {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+
+    .painel-main-content {
+        padding-top: 0;
+    }
+
+    .painel-enderecos-vtex {
+        padding: 0 16px;
+    }
+
+    .painel-enderecos-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px 0 0 0;
+    }
+
+    .painel-enderecos-header-right {
+        margin-top: 16px;
+        justify-content: flex-end;
+    }
+
+    .painel-enderecos-title {
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .painel-enderecos-empty {
+        padding-top: 24px;
+    }
+
+    .painel-dados-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+
+.painel-dados-box {
+    background: #fff;
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    flex: 1.4 1 0;
+    min-width: 0;
+}
+
+.painel-dados-header {
+    background: #f5f5f5;
+    border-radius: 10px 10px 0 0;
+    padding: 24px 18px 16px 18px;
+    font-weight: 700;
+    color: #ff1493;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e3e4e6;
+}
+
+.painel-dados-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 28px;
+    padding: 0 24px 0 24px;
+    margin-top: 0;
+}
+
+.painel-dados-table td {
+    padding: 0 0 0 0;
+    vertical-align: top;
+}
+
+.painel-dados-label {
+    color: #3f3f40;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+}
+
+.painel-dados-value {
+    color: #a3a3a3;
+    font-size: 1.05rem;
+}
+
+.painel-dados-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 24px 24px 24px;
+}
+
+.painel-dados-editar-btn {
+    background: #ff008c;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.painel-dados-editar-btn:hover {
+    background: #fff;
+    color: #ff008c;
+    border: 2px solid #ff008c;
+}
+
+.painel-newsletter-box {
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    padding: 28px 32px 28px 32px;
+    margin-left: 32px;
+    max-width: 650px;
+    min-width: 380px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 1 0;
+}
+
+.painel-newsletter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.painel-newsletter-desc {
+    color: #a3a3a3;
+    font-size: 1.08rem;
+    margin-bottom: 18px;
+}
+
+.painel-checkbox-row {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.painel-checkbox-custom {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff008c;
+    border-radius: 4px;
+    background: #fff;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.painel-checkbox-custom:checked {
+    background: #ff008c;
+    border-color: #ff008c;
+}
+
+.painel-checkbox-custom:checked:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.painel-checkbox-label {
+    color: #222;
+    font-size: 1.08rem;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .painel-newsletter-box {
+        min-width: 0 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 24px !important;
+        max-width: 100% !important;
+    }
+
+    .painel-dados-row {
+        flex-direction: column !important;
+        gap: 24px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        width: 100%;
+    }
+}
+
+
+.painel-dados-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.painel-enderecos-vtex {
+    background: #fff;
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    padding: 0;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    flex: 1.4 1 0;
+    min-width: 0;
+}
+
+.painel-enderecos-header {
+    background: #f5f5f5;
+    border-radius: 10px 10px 0 0;
+    padding: 24px 18px 16px 18px;
+    font-weight: 700;
+    color: #ff1493;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e3e4e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.painel-enderecos-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.painel-enderecos-title {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.painel-enderecos-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.painel-vtex-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+}
+
+.painel-vtex-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-enderecos-empty {
+    padding: 24px;
+    text-align: center;
+}
+
+.painel-enderecos-empty-msg {
+    font-size: 1.2rem;
+    color: #a3a3a3;
+    font-weight: 400;
+}
+
+/* VTEX-like Pedidos layout */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.painel-pedidos-vtex {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.painel-pedidos-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 40px 0 0 0;
+    margin-bottom: 0;
+    gap: 18px;
+}
+
+.painel-vtex-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+}
+
+.painel-vtex-btn:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-vtex-btn-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.painel-pedidos-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0 0 0 0;
+    line-height: 1.1;
+    text-align: left;
+    flex: 0 0 auto;
+}
+
+.painel-pedidos-empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 120px;
+    padding-top: 40px;
+}
+
+.painel-pedidos-empty-msg {
+    font-size: 2rem;
+    color: #a3a3a3;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+@media (max-width: 900px) {
+    .painel-pedidos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 40px;
+    }
+
+    .painel-pedidos-title {
+        font-size: 2rem;
+        margin: 0;
+        text-align: left;
+    }
+
+    .painel-pedidos-empty {
+        padding-top: 24px;
+    }
+}
+
+/* Remove todas as bordas da estrutura do painel */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.painel-container,
+.painel-sidebar,
+.painel-main,
+.painel-header,
+.painel-main-content,
+.painel-enderecos-vtex,
+.painel-box,
+.painel-menu a,
+.painel-enderecos-header,
+.painel-enderecos-header-left,
+.painel-cartoes-vtex,
+.painel-enderecos-header-right {
+    border: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+    .painel-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .painel-title {
+        font-size: 2rem;
+        text-align: left;
+    }
+}
+
+.painel-cartoes-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px 0 0 0;
+    margin-bottom: 0;
+    gap: 0;
+    position: relative;
+}
+
+.painel-cartoes-header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.painel-cartoes-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.painel-cartoes-header-right {
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
+}
+
+.painel-vtex-btn,
+.painel-vtex-btn-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+}
+
+.painel-vtex-btn:hover,
+.painel-vtex-btn-add:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-vtex-btn-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.painel-cartoes-empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 120px;
+    padding-top: 40px;
+}
+
+.painel-cartoes-empty-msg {
+    font-size: 2rem;
+    color: #a3a3a3;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+@media (max-width: 900px) {
+    .painel-cartoes-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px 0 0 0;
+    }
+
+    .painel-cartoes-header-right {
+        margin-top: 16px;
+        justify-content: flex-end;
+    }
+
+    .painel-cartoes-title {
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .painel-cartoes-empty {
+        padding-top: 24px;
+    }
+}
+
+.painel-cartoes-header-vtex {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.painel-cartoes-header-row1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.painel-cartoes-header-row2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.painel-cartoes-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.painel-vtex-btn,
+.painel-vtex-btn-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 2px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 20px;
+    min-width: 0;
+}
+
+.painel-vtex-btn:hover,
+.painel-vtex-btn-add:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.painel-vtex-btn-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.painel-cartoes-empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 120px;
+    padding-top: 40px;
+}
+
+.painel-cartoes-empty-msg {
+    font-size: 2rem;
+    color: #a3a3a3;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+@media (max-width: 900px) {
+    .painel-cartoes-header-vtex {
+        padding-top: 24px;
+    }
+
+    .painel-cartoes-header-row2 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .painel-cartoes-title {
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .painel-cartoes-empty {
+        padding-top: 24px;
+    }
+}
+
+.painel-cartoes-vtex {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    padding: 0 24px 32px 24px;
+    box-sizing: border-box;
+}
+
+.painel-assinaturas-vtex {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 24px auto;
+    background: #fff;
+
+    border-radius: 10px;
+    padding: 0 24px 32px 24px;
+    box-sizing: border-box;
+}
+
+.painel-assinaturas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    margin-bottom: 0;
+}
+
+.painel-assinaturas-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.painel-assinaturas-add-btn {
+    padding: 8px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.painel-assinaturas-filtro-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 32px 0 0 0;
+}
+
+.painel-assinaturas-filtro-label {
+    font-size: 1.1rem;
+    color: #3a3a3a;
+}
+
+.painel-assinaturas-filtro-select {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    color: #ff1493;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.painel-assinaturas-empty {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 180px;
+    padding-top: 40px;
+}
+
+.painel-assinaturas-empty-title {
+    font-size: 2rem;
+    color: #a3a3a3;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.painel-assinaturas-empty-desc {
+    font-size: 1rem;
+    color: #b3b3b3;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .painel-assinaturas-vtex {
+        padding: 0 8px 24px 8px;
+    }
+
+    .painel-assinaturas-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 24px;
+        gap: 16px;
+    }
+
+    .painel-assinaturas-title {
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .painel-assinaturas-filtro-row {
+        margin-top: 24px;
+    }
+
+    .painel-assinaturas-empty {
+        padding-top: 24px;
+    }
+}
+
+.painel-autenticacao-vtex {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border: none;
+    /* Remover borda externa */
+    border-radius: 10px;
+    padding: 0 24px 32px 24px;
+    box-sizing: border-box;
+}
+
+.painel-autenticacao-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    padding-top: 40px;
+    margin-bottom: 0;
+}
+
+.painel-autenticacao-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0 0 0 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.painel-autenticacao-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 180px;
+    padding-top: 32px;
+}
+
+.painel-autenticacao-cards {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.painel-autenticacao-card {
+    background: #fff;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    padding: 32px 36px 18px 36px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.painel-autenticacao-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.painel-autenticacao-card-content {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 18px;
+}
+
+.painel-autenticacao-card-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.painel-vtex-btn-outline {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 10px 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.painel-vtex-btn-outline:hover {
+    background: #ff1493;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .painel-autenticacao-vtex {
+        padding: 0 8px 24px 8px;
+    }
+
+    .painel-autenticacao-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 24px;
+        gap: 12px;
+    }
+
+    .painel-autenticacao-title {
+        font-size: 2rem;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .painel-autenticacao-main {
+        padding-top: 16px;
+    }
+
+    .painel-autenticacao-cards {
+        gap: 18px;
+    }
+
+    .painel-autenticacao-card {
+        padding: 24px 12px 12px 12px;
+    }
+}
+
+.painel-dados-row,
+.painel-enderecos-vtex,
+.painel-pedidos-vtex,
+.painel-cartoes-vtex,
+.painel-assinaturas-vtex,
+.painel-autenticacao-vtex {
+    padding-top: 60px !important;
+}
+
+/* Se quiser remover qualquer margin-top extra dessas sessões, pode adicionar: */
+.painel-dados-row,
+.painel-enderecos-vtex,
+.painel-pedidos-vtex,
+.painel-cartoes-vtex,
+.painel-assinaturas-vtex,
+.painel-autenticacao-vtex {
+    margin-top: 0 !important;
+}
+
+/* RESPONSIVIDADE GERAL */
+@media (max-width: 1200px) {
+    .painel-container {
+        max-width: 100vw;
+        padding: 0 10px;
+    }
+
+    .painel-main {
+        padding: 0 10px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .painel-container {
+        flex-direction: column;
+        max-width: 100vw;
+        min-width: 0;
+        padding: 0;
+    }
+
+    .painel-sidebar {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 12px 0;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    .painel-avatar {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0;
+    }
+
+    .painel-avatar svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .painel-hello {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .painel-menu {
+        flex-direction: row;
+        gap: 0;
+        width: auto;
+        margin-left: 16px;
+    }
+
+    .painel-menu a {
+        padding: 10px 12px;
+        font-size: 0.98rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+    }
+
+    .painel-menu a.active,
+    .painel-menu a:hover {
+        border-left: none;
+        border-bottom: 3px solid #ff1493;
+        background: #fff;
+    }
+
+    .painel-main {
+        padding: 0 8px !important;
+    }
+
+    .painel-main-content {
+        padding-top: 0 !important;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .painel-dados-row {
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 0 !important;
+        margin-top: 24px !important;
+    }
+
+    .painel-newsletter-box {
+        margin-left: 0;
+        margin-top: 24px;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .painel-enderecos-vtex,
+    .painel-pedidos-vtex,
+    .painel-cartoes-vtex,
+    .painel-assinaturas-vtex,
+    .painel-autenticacao-vtex {
+        padding: 0 4px 24px 4px !important;
+        margin-top: 24px !important;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .painel-enderecos-header,
+    .painel-pedidos-header,
+    .painel-cartoes-header,
+    .painel-assinaturas-header,
+    .painel-autenticacao-header {
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 16px !important;
+        gap: 10px;
+    }
+
+    .painel-enderecos-title,
+    .painel-pedidos-title,
+    .painel-cartoes-title,
+    .painel-assinaturas-title,
+    .painel-autenticacao-title {
+        font-size: 1.4rem !important;
+        margin: 0 0 8px 0 !important;
+        text-align: left;
+    }
+
+    .painel-endereco-card {
+        margin-top: 18px;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 18px 10px 16px 10px;
+    }
+
+    .painel-cartoes-header-vtex {
+        padding-top: 16px !important;
+    }
+
+    .painel-cartoes-header-row2 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .painel-cartoes-title {
+        font-size: 1.4rem !important;
+    }
+
+    .painel-cartoes-empty,
+    .painel-pedidos-empty,
+    .painel-assinaturas-empty {
+        padding-top: 16px !important;
+    }
+
+    .painel-assinaturas-filtro-row {
+        margin-top: 16px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .painel-autenticacao-main {
+        padding-top: 12px !important;
+    }
+
+    .painel-autenticacao-cards {
+        gap: 12px;
+    }
+
+    .painel-autenticacao-card {
+        padding: 16px 8px 8px 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .painel-container {
+        padding: 0;
+        max-width: 100vw;
+        flex-direction: column;
+    }
+
+    .painel-main {
+        padding: 0 16px;
+        width: 100%;
+    }
+
+    .painel-main-content {
+        padding: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+        overflow: visible;
+    }
+
+    .painel-dados-row {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .painel-dados-box,
+    .painel-newsletter-box {
+        width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .painel-dados-table {
+        width: 100%;
+    }
+
+    .painel-menu {
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .painel-menu a {
+        font-size: 0.95rem;
+        padding: 8px 6px;
+    }
+}
+
+/* ...existing code... */
+
+/* RESPONSIVIDADE PARA TELAS PEQUENAS: layout igual ao da imagem */
+@media (max-width: 900px) {
+    .painel-header {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        padding: 0 !important;
+        min-height: unset;
+        margin-bottom: 0;
+    }
+
+    .painel-title {
+        font-size: 2rem !important;
+        margin: 0 0 0 0 !important;
+        text-align: left !important;
+        font-weight: 700;
+        flex: 1 1 auto;
+        padding-left: 0;
+    }
+
+    .painel-main-content {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding-top: 0 !important;
+        width: 100%;
+    }
+
+    .painel-dados-row {
+        flex-direction: column !important;
+        gap: 24px !important;
+        margin-top: 24px !important;
+        /* Mantém este margin-top para espaçamento */
+        padding-top: 0 !important;
+        /* Garante que não há padding no topo do row */
+        width: 100%;
+    }
+
+    .painel-dados-box {
+        margin-bottom: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .painel-newsletter-box {
+        margin: 0 !important;
+        margin-bottom: 24px !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+
+.painel-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.painel-input:focus {
+    border-color: #ff1493;
+    outline: none;
+}
+
+/* Estrutura VTEX-like para edição de dados pessoais */
+.vtex-account__page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 32px;
+}
+
+.vtex-pageHeader__container {
+    padding: 32px 0 0 0;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.vtex-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.vtex-account__page-body {
+    padding: 0 24px;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 32px 24px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+/* VTEX-like fiel ao print, com alinhamento, cores, bordas e espaçamento idênticos */
+/* filepath: d:\xamp\apache\htdocs\wepink\includes\painel_usuario.php */
+.vtex-account__page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileEdit__header {
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader__container {
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.vtex-pageHeader-link__container {
+    margin-bottom: 12px;
+}
+
+.painel-back-btn {
+    background: #ff1493;
+    color: #fff;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 14px;
+    margin-bottom: 18px;
+}
+
+.painel-back-btn svg {
+    margin-right: 6px;
+}
+
+.vtex-pageHeader__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 32px;
+}
+
+.vtex-account__page-body {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.vtex-my-account-1-x-profileFormBoxContainer {
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vtex-my-account-1-x-boxContainer {
+    border: 1px solid #e3e4e6;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: none;
+    width: 100%;
+}
+
+.vtex-my-account-1-x-boxContainerBody {
+    padding: 40px 32px;
+}
+
+.vtex-profile-form-3-x-profileContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.vtex-profile-form-3-x-personalFields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vtex-profile-form-3-x-styleguideInput {
+    width: 100%;
+}
+
+.vtex-input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e3e4e6;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    background: #fff;
+    color: #222;
+    transition: border 0.2s;
+}
+
+.vtex-input__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.vtex-button--primary {
+    background: #ff1493;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    margin: 0;
+    z-index: 2;
+    outline: none;
+    min-height: 40px;
+}
+
+.vtex-button--primary:hover {
+    background: #fff;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.t-required-phone {
+    color: #ff008c;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+    .vtex-account__page {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-profileFormBoxContainer {
+        padding: 0 8px;
+    }
+
+    .vtex-my-account-1-x-boxContainer {
+        border: none;
+        box-shadow: none;
+    }
+
+    .vtex-my-account-1-x-boxContainerBody {
+        padding: 24px 16px;
+    }
+
+    .vtex-profile-form-3-x-personalFields {
+        gap: 16px;
+    }
+
+    .vtex-profile-form-3-x-styleguideInput {
+        margin-bottom: 16px;
+    }
+
+    .vtex-button--primary {
+        width: 100%;
+    }
+}
+
+#painel-dados-form input[type="text"],
+#painel-dados-form input[type="email"],
+#painel-dados-form input[type="password"] {
+    border: 1px solid #e3e4e6 !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: none !important;
+    padding: 6px 10px !important;
+    height: 32px !important;
+    font-size: 0.95rem !important;
+    margin: 0 0 8px 0 !important;
+}
+
+#painel-dados-form select[name="gender"] {
+    border: 1px solid #e3e4e6 !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: none !important;
+    padding: 6px 10px !important;
+    height: 32px !important;
+    font-size: 0.95rem !important;
+    margin: 0 0 8px 0 !important;
+}
+
+/* Remove bordas de containers e labels */
+#painel-dados-form label,
+#painel-dados-form .vtex-profile-form-3-x-styleguideInput,
+#painel-dados-form .vtex-input,
+#painel-dados-form .vtex-input-prefix__group,
+#painel-dados-form .br2,
+#painel-dados-form .ba,
+#painel-dados-form .b--light-gray {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 0 8px 0 !important;
+}
+
+/* Reduz o espaçamento vertical do formulário */
+#painel-dados-form .vtex-profile-form-3-x-personalFields {
+    gap: 8px !important;
+}
+
+#painel-dados-form .vtex-profile-form-3-x-styleguideInput {
+    margin-bottom: 4px !important;
+}
+
+#painel-dados-form .vtex-input__label {
+    margin-bottom: 2px !important;
+    font-size: 0.93rem !important;
+}
+
+#painel-dados-form .t-required-phone {
+    margin-top: 0 !important;
+    font-size: 0.85rem !important;
+}
+
+#painel-dados-form button,
+#painel-dados-form .vtex-button {
+    margin-top: 8px !important;
+    min-height: 32px !important;
+    padding: 6px 0 !important;
+    font-size: 0.95rem !important;
+}
+
+/* ...existing code... */
+
+/* Melhorias gerais de responsividade */
+@media (max-width: 1200px) {
+    .painel-container {
+        max-width: 100vw !important;
+        ;
+        padding: 0 10px !important;
+        ;
+    }
+
+    .painel-main {
+        padding: 0 10px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .painel-container {
+        flex-direction: column !important;
+        ;
+        max-width: 100vw !important;
+        ;
+        min-width: 0 !important;
+        ;
+        padding: 0 !important;
+        ;
+    }
+
+    .painel-sidebar {
+        width: 100% !important;
+        ;
+        min-width: 0 !important;
+        ;
+        flex-direction: row !important;
+        ;
+        border-right: none !important;
+        ;
+        border-bottom: 1px solid #f0f0f0 !important;
+        ;
+        padding: 12px 0 !important;
+        ;
+        align-items: flex-start !important;
+        ;
+        justify-content: flex-start !important;
+        ;
+        gap: 12px !important;
+        ;
+    }
+
+    .painel-avatar {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .painel-avatar svg {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .painel-hello {
+        font-size: 1rem !important;
+        margin-bottom: 0 v;
+    }
+
+    .painel-menu {
+        flex-direction: row !important;
+        gap: 0 !important;
+        width: auto !important;
+        margin-left: 16px !important;
+    }
+
+    .painel-menu a {
+        padding: 10px 12px !important;
+        font-size: 0.98rem !important;
+        border-left: none !important;
+        border-bottom: 3px solid transparent !important;
+        border-radius: 0 !important;
+    }
+
+    .painel-menu a.active,
+    .painel-menu a:hover {
+        border-left: none !important;
+        border-bottom: 3px solid #ff1493 !important;
+        background: #fff !important;
+    }
+
+    .painel-main {
+        padding: 0 8px !important;
+    }
+
+    .painel-main-content {
+        padding-top: 0 !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .painel-dados-row {
+        flex-direction: column !important;
+        gap: 24px !important;
+        padding-top: 0 !important;
+        margin-top: 24px !important;
+    }
+
+    .painel-newsletter-box {
+        margin-left: 0 !important;
+        margin-top: 24px !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .painel-enderecos-vtex,
+    .painel-pedidos-vtex,
+    .painel-cartoes-vtex,
+    .painel-assinaturas-vtex,
+    .painel-autenticacao-vtex {
+        padding: 0 4px 24px 4px !important;
+        margin-top: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .painel-enderecos-header,
+    .painel-pedidos-header,
+    .painel-cartoes-header,
+    .painel-assinaturas-header,
+    .painel-autenticacao-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding-top: 16px !important;
+        gap: 10px !important;
+    }
+
+    .painel-enderecos-title,
+    .painel-pedidos-title,
+    .painel-cartoes-title,
+    .painel-assinaturas-title,
+    .painel-autenticacao-title {
+        font-size: 1.4rem !important;
+        margin: 0 0 8px 0 !important;
+        text-align: left !important;
+    }
+
+    .painel-endereco-card {
+        margin-top: 18px !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        font-size: 1rem !important;
+        padding: 18px 10px 16px 10px !important;
+    }
+
+    .painel-cartoes-header-vtex {
+        padding-top: 16px !important;
+    }
+
+    .painel-cartoes-header-row2 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .painel-cartoes-title {
+        font-size: 1.4rem !important;
+    }
+
+    .painel-cartoes-empty,
+    .painel-pedidos-empty,
+    .painel-assinaturas-empty {
+        padding-top: 16px !important;
+    }
+
+    .painel-assinaturas-filtro-row {
+        margin-top: 16px !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .painel-autenticacao-main {
+        padding-top: 12px !important;
+    }
+
+    .painel-autenticacao-cards {
+        gap: 12px !important;
+    }
+
+    .painel-autenticacao-card {
+        padding: 16px 8px 8px 8px !important;
+    }
+}
+
+/* Para telas muito pequenas (celulares) */
+@media (max-width: 600px) {
+    .painel-container {
+        padding: 0 !important;
+        max-width: 100vw !important;
+        flex-direction: column !important;
+        ;
+    }
+
+    .painel-main {
+        padding: 0 4px !important;
+        width: 100% !important;
+    }
+
+    .painel-main-content {
+        padding: 8px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    .painel-dados-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    .painel-dados-box,
+    .painel-newsletter-box {
+        width: 100% !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+    }
+
+    .painel-dados-table td {
+        font-size: 0.95rem !important;
+    }
+
+    .painel-menu {
+        margin-left: 0;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+    }
+
+    .painel-menu a {
+        font-size: 0.93rem !important;
+        padding: 8px 4px !important;
+    }
+
+    .painel-endereco-card {
+        padding: 10px 4px 10px 4px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .painel-enderecos-header,
+    .painel-pedidos-header,
+    .painel-cartoes-header,
+    .painel-assinaturas-header,
+    .painel-autenticacao-header {
+        padding: 8px 0 0 0 !important;
+    }
+}
+
+/* Ajustes para inputs e botões em telas pequenas */
+@media (max-width: 480px) {
+
+    .painel-input,
+    .vtex-input {
+        font-size: 0.9rem !important;
+        padding: 8px 6px !important;
+    }
+
+    .vtex-button--primary,
+    .painel-vtex-btn,
+    .painel-vtex-btn-add {
+        font-size: 0.95rem !important;
+        padding: 8px 0 !important;
+        min-height: 32px !important;
+    }
+
+    .painel-title,
+    .vtex-pageHeader__title {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Garante que tabelas e cards não estourem a tela */
+.painel-dados-table,
+.painel-enderecos-content,
+.painel-cartoes-vtex,
+.painel-assinaturas-vtex,
+.painel-autenticacao-vtex {
+    width: 100% !important;
+    overflow-x: auto !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+    .painel-sidebar {
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 240px !important;
+        background: #fff !important;
+        z-index: 1000 !important;
+        transform: translateX(-100%) !important;
+        transition: transform 0.3s !important;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08) !important;
+        border-right: 1px solid #eee !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-top: 60px !important;
+    }
+
+    .painel-sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    .painel-menu {
+        flex-direction: column !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .painel-menu a {
+        padding: 16px 24px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        font-size: 1.1rem !important;
+    }
+
+    .painel-menu a:last-child {
+        border-bottom: none !important;
+    }
+
+    .painel-hamburger {
+        display: block !important;
+        position: fixed !important;
+        top: 18px !important;
+        left: 18px !important;
+        z-index: 1100 !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+    }
+
+    .painel-hamburger span,
+    .painel-hamburger span:before,
+    .painel-hamburger span:after {
+        display: block !important;
+        background: #222 !important;
+        height: 4px !important;
+        width: 28px !important;
+        border-radius: 2px !important;
+        position: absolute !important;
+        left: 6px !important;
+        transition: all 0.3s !important;
+    }
+
+    .painel-hamburger span {
+        position: relative !important;
+        top: 18px !important;
+    }
+
+    .painel-hamburger span:before {
+        content: '' !important;
+        position: absolute !important;
+        top: -10px !important;
+    }
+
+    .painel-hamburger span:after {
+        content: '' !important;
+        position: absolute !important;
+        top: 10px !important;
+    }
+
+    /* Esconde a sidebar padrão no mobile */
+    .painel-container {
+        padding-left: 0 !important;
+    }
+}
+
+/* Esconde o botão do menu em desktop */
+.painel-hamburger {
+    display: none !important;
+}
+
+@media (max-width: 900px) {
+    .painel-mobile-back-btn-container {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .painel-mobile-back-btn {
+        display: flex;
+        align-items: center;
+        background: #ff1493;
+        color: #fff;
+        border: none;
+        border-radius: 16px;
+        padding: 2px 14px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        outline: none;
+        min-height: 28px;
+    }
+
+    .painel-mobile-back-btn-icon {
+        display: flex;
+        align-items: center;
+        margin-right: 6px;
+    }
+
+    .painel-mobile-back-btn-text {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: none;
+    }
+}
+
+@media (min-width: 901px) {
+    .painel-mobile-back-btn-container {
+        display: none !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .painel-mobile-back-btn-container {
+        display: block;
+    }
+}
+
+@media (min-width: 901px) {
+    .painel-mobile-back-btn-container {
+        display: none !important;
+    }
+}
+
+/* ...existing code... */
